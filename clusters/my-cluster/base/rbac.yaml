@@ -1,23 +1,42 @@
+# ServiceAccounts in flux-system (so Flux can use them)
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: staging-flux
+  namespace: flux-system
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: flux
-  namespace: default
----
+  name: production-flux
+  namespace: flux-system
 
+# Grant permissions in staging (bind flux-system SA to a Role or ClusterRole)
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: reconciler-binding
-  namespace: default
+  name: staging-deployer-binding
+  namespace: staging
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: cluster-admin
+  name: cluster-admin   # or a custom Role with least-privilege
 subjects:
-- kind: User
-  name: gotk:default:reconciler
 - kind: ServiceAccount
-  name: flux
-  namespace: default
+  name: staging-flux
+  namespace: flux-system  # IMPORTANT: SA is in flux-system
+
+# Grant permissions in production
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: production-deployer-binding
+  namespace: production
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin   # or a custom Role with least-privilege
+subjects:
+- kind: ServiceAccount
+  name: production-flux
+  namespace: flux-system  # IMPORTANT: SA is in flux-system
