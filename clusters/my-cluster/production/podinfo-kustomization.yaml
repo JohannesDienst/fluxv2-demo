@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 
 spec:
-  serviceAccountName: production-flux
+  serviceAccountName: kustomize-controller
   interval: 1m0s
   path: ./kustomize
   prune: true
