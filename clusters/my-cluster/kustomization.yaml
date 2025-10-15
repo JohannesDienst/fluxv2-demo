@@ -5,3 +5,4 @@ resources:
   - base
   - staging
   - production
+  - podinfo-source.yaml
