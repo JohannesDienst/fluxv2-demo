@@ -1,15 +1,3 @@
-# ServiceAccounts in flux-system (so Flux can use them)
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: staging-flux
-  namespace: flux-system
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: production-flux
-  namespace: flux-system
 ---
 # Grant permissions in staging (bind flux-system SA to a Role or ClusterRole)
 apiVersion: rbac.authorization.k8s.io/v1
