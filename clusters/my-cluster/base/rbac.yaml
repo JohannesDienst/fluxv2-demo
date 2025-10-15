@@ -17,7 +17,7 @@ roleRef:
   name: cluster-admin
 subjects:
 - kind: User
-  name: gotk:apps:reconciler
+  name: gotk:staging:reconciler
 - kind: ServiceAccount
   name: flux
   namespace: default
