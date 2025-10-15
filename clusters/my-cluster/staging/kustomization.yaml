@@ -4,28 +4,28 @@ namespace: staging
 resources:
   - ../base/
 namePrefix: staging-
-patches:
-  - target:
-      kind: ServiceAccount
-      name: flux
-      namespace: default
-    patch: |-
-      apiVersion: v1
-      kind: ServiceAccount
-      metadata:
-        name: flux
-        namespace: staging
-  - target:
-      kind: RoleBinding
-      name: reconciler-binding
-      namespace: default
-    patch: |-
-      apiVersion: rbac.authorization.k8s.io/v1
-      kind: RoleBinding
-      metadata:
-        name: staging-reconciler
-        namespace: staging
-      subjects:
-        - kind: ServiceAccount
-          name: flux
-          namespace: staging
+# patches:
+#   - target:
+#       kind: ServiceAccount
+#       name: flux
+#       namespace: default
+#     patch: |-
+#       apiVersion: v1
+#       kind: ServiceAccount
+#       metadata:
+#         name: flux
+#         namespace: staging
+#   - target:
+#       kind: RoleBinding
+#       name: reconciler-binding
+#       namespace: default
+#     patch: |-
+#       apiVersion: rbac.authorization.k8s.io/v1
+#       kind: RoleBinding
+#       metadata:
+#         name: staging-reconciler
+#         namespace: staging
+#       subjects:
+#         - kind: ServiceAccount
+#           name: flux
+#           namespace: staging
