@@ -7,10 +7,6 @@ spec:
   interval: 1m
   path: "./clusters/my-cluster/staging"
   prune: true
-  sourceRef:
-    kind: GitRepository
-    name: podinfo-ingress
-    namespace: flux-system
   targetNamespace: staging
   dependsOn:
     - name: podinfo
