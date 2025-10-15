@@ -5,12 +5,12 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  path: "./staging"
+  path: "./clusters/my-cluster/staging"
   prune: true
   sourceRef:
     kind: GitRepository
     name: podinfo-ingress
-    namespace: flux-system
+    namespace: staging
   targetNamespace: staging
   dependsOn:
     - name: podinfo
