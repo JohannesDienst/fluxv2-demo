@@ -1,0 +1,12 @@
+# ServiceAccounts in flux-system (so Flux can use them)
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: staging-flux
+  namespace: flux-system
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: production-flux
+  namespace: flux-system
