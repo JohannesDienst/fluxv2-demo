@@ -28,7 +28,7 @@ patches:
       rules:
         - apiGroups: ['*']
           resources: ['*']
-          verbs: ['create', 'get', 'list', 'watch']
+          verbs: [*]
   - target:
       kind: RoleBinding
       name: reconciler-binding
