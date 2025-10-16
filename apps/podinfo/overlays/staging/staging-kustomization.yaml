@@ -20,33 +20,13 @@ spec:
   wait: true
   patches:
     - patch: |-
-        apiVersion: apps/v1
-        kind: Deployment
-        metadata:
-          name: podinfo
-        metadata:
-          namespace: staging
-      target:
-        kind: Deployment
-        name: podinfo
-    - patch: |-
-        apiVersion: v1
-        kind: Service
-        metadata:
-          name: podinfo
-        metadata:
-          namespace: staging
-      target:
-        kind: Service
-        name: podinfo
-    - patch: |-
         apiVersion: autoscaling/v2
         kind: HorizontalPodAutoscaler
         metadata:
           name: podinfo
-          namespace: staging
         spec:
-          minReplicas: 2           
+          minReplicas: 2
       target:
         name: podinfo
         kind: HorizontalPodAutoscaler
+ 
