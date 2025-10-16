@@ -5,20 +5,20 @@ resources:
   - gotk-sync.yaml
   - rbac.yaml
 patches:
-  - patch: |
-      - op: add
-        path: /spec/template/spec/containers/0/args/-
-        value: --no-cross-namespace-refs=true
-    target:
-      kind: Deployment
-      name: "(kustomize-controller|helm-controller|notification-controller|image-reflector-controller|image-automation-controller)"
+  # - patch: |
+  #     - op: add
+  #       path: /spec/template/spec/containers/0/args/-
+  #       value: --no-cross-namespace-refs=true
+  #   target:
+  #     kind: Deployment
+  #     name: "(kustomize-controller|helm-controller|notification-controller|image-reflector-controller|image-automation-controller)"
   # - patch: |
   #     - op: add
   #       path: /spec/template/spec/containers/0/args/-
   #       value: --no-remote-bases=true
-    target:
-      kind: Deployment
-      name: "kustomize-controller"
+  #   target:
+  #     kind: Deployment
+  #     name: "kustomize-controller"
   - patch: |
       - op: add
         path: /spec/template/spec/containers/0/args/-
