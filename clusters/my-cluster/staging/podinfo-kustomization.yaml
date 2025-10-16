@@ -2,8 +2,8 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: podinfo-staging
-  namespace: staging
+  name: podinfo
+  namespace: flux-system
 
 spec:
   serviceAccountName: staging-flux
