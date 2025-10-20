@@ -5,9 +5,9 @@ metadata:
   namespace: flux-system
 spec:
   serviceAccountName: ingress-nginx-flux
-  interval: 10m
   targetNamespace: ingress-nginx
   storageNamespace: ingress-nginx
+  interval: 10m
   chart:
     spec:
       chart: charts/ingress-nginx   # path to the chart within the repo
@@ -26,6 +26,6 @@ spec:
       retries: 3
   values:
     controller:
-      replicaCount: 2
+      replicaCount: 1
       service:
         type: LoadBalancer
