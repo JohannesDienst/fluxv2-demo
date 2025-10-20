@@ -4,6 +4,8 @@ metadata:
   name: ingress-nginx-controller
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: ingress-nginx
   interval: 30m0s
   path: ./kustomize
   prune: true
