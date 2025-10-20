@@ -4,6 +4,7 @@ metadata:
   name: ingress-nginx
   namespace: flux-system
 spec:
+  serviceAccountName: ingress-nginx-flux
   interval: 10m
   targetNamespace: ingress-nginx
   chart:
