@@ -12,8 +12,10 @@ spec:
       version: 4.11.2
       sourceRef:
         kind: HelmRepository
-        name: ingress-nginx
+        name: ingress-nginx-controller-source
         namespace: flux-system
+      chart: charts/ingress-nginx   # path to the chart within the repo
+      reconcileStrategy: Revision   # good default for Git sources
   install:
     createNamespace: true
     remediation:
