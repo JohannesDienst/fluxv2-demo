@@ -10,4 +10,3 @@ kind: ServiceAccount
 metadata:
   name: production-flux
   namespace: flux-system
-
