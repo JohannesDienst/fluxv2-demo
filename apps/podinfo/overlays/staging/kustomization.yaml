@@ -3,4 +3,3 @@ kind: Kustomization
 namespace: staging
 resources:
   - podinfo-ingress.yaml
-  - staging-kustomization.yaml

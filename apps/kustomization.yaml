@@ -3,4 +3,6 @@ kind: Kustomization
 resources:
   - podinfo/sources/flux-system
   - podinfo/overlays/staging
+  - podinfo/overlays/staging/staging-kustomization.yaml
   - podinfo/overlays/production
+  - podinfo/overlays/production/production-kustomization.yaml
