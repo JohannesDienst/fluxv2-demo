@@ -19,14 +19,5 @@ spec:
   timeout: 3m0s
   wait: true
   patches:
-    - patch: |-
-        apiVersion: autoscaling/v2
-        kind: HorizontalPodAutoscaler
-        metadata:
-          name: podinfo
-        spec:
-          minReplicas: 2
-      target:
-        name: podinfo
-        kind: HorizontalPodAutoscaler
+    path: ./hpa-minreplicas-patch.yaml
  
