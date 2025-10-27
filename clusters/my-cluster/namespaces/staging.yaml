@@ -3,5 +3,4 @@ kind: Namespace
 metadata:
   name: staging
   labels:
-    pod-security.kubernetes.io/enforce: restricted
     workspace: staging

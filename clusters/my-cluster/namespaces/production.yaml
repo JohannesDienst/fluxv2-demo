@@ -3,5 +3,4 @@ kind: Namespace
 metadata:
   name: production
   labels:
-    pod-security.kubernetes.io/enforce: restricted
     workspace: production
